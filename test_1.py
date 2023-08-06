@@ -1,18 +1,18 @@
 import random
 import time
 
-def generate_value(V_old, condition):
-  if condition == 1:
+def generate_value(V_old, cond):
+  if cond == 1:
     V_new = random.randint(1, 10)
-    condition = 0
+    cond = 0
   
-  V_new = random.randint(1)
+  V_new = random.randint(1, 1000)
   
   # timeout 0.5 second to the program
   time0 = time.time()
   
   while abs(V_old - V_new) > 10:
-    V_new = random.randint(1)
+    V_new = random.randint(1, 1000)
     
     if(time.time() - time0 == 0.5):
       V_new = V_old + 10

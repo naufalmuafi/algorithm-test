@@ -1,7 +1,11 @@
 import random
 import time
 
-def generate_value(V_old):
+def generate_value(V_old, condition):
+  if condition == 1:
+    V_new = random.randint(1, 10)
+    condition = 0
+  
   V_new = random.randint(1)
   
   # timeout 0.5 second to the program
@@ -17,13 +21,20 @@ def generate_value(V_old):
 
 def main():
   A = []
-  V, total = 0, 0
+  V, total, count, condition = 0, 0, 1, 1
   
   while True:
-    V = generate_value(V)
-    A.append(V)    
+    V = generate_value(V, condition)
     print(f"Water Volume = {V} m^3/s\n")
     
+    total += V
+    A.append(V)
+    length = len(A)
+    
+    M = total/length    
+    print(f"The average water volume at second {count} is {M} m^3/s")
+    
+    count += 1
     time.sleep(1)
 
 if __name__ = "__main":

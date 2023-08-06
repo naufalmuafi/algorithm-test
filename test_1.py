@@ -37,5 +37,5 @@ def main():
     count += 1
     time.sleep(1)
 
-if __name__ = "__main":
+if __name__ == "__main":
   main()

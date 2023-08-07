@@ -1,7 +1,6 @@
 import random
 import time
 
-
 def generate_value(V_old, cond):
   if cond == 1:
     V_new = random.randint(1, 10)
@@ -16,8 +15,8 @@ def generate_value(V_old, cond):
 
     if V_new < 0:
       V_new = 0 + random.randint(1, 10)
-    elif V_new > 1000:
-      V_new = 1000 - random.randint(1, 10)
+    elif V_new > 500:
+      V_new = 500 - random.randint(1, 10)
 
     return V_new, cond
 
@@ -47,6 +46,7 @@ def main():
     n = len(A)
     
     M = total/n
+    print(f"Total = {total}, n = {n}")
     print(f"The average water volume at second {count} is {M:.3f} m^3/s\n")
     
     count += 1

@@ -1,7 +1,6 @@
 import random
 import time
 
-
 def generate_value(V_old, cond):
   if cond == 1:
     V_new = random.randint(1, 10)

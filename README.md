@@ -17,6 +17,7 @@ The median is the middle value of a sorted list of numbers. For an odd-sized lis
    .\filename.py
    ```
 4. Click enter, and the program will display the calculated mean and median.
+5. To force stop program, please enter Ctrl+C in keyboard.
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

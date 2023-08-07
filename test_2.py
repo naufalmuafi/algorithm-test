@@ -9,16 +9,15 @@ def generate_value(V_old, cond):
     
     return V_new, cond
   else:
-    V_new = random.randint(1, 1000)
-
-    # timeout 0.1 second to the program
-    time0 = time.time()
-
-    while abs(V_old - V_new) > 10:
-      V_new = random.randint(1, 1000)
-
-      if(time.time() - time0 == 0.1):
-        V_new = V_old + 10
+    if random.random() <= 0.7:      
+      V_new = V_old + random.randint(1, 10)
+    else:
+      V_new = V_old - random.randint(1, 10)
+    
+    if V_new < 0:
+      V_new = 0 + random.randint(1, 10)
+    elif V_new > 1000:
+      V_new = 1000 - random.randint(1, 10)
 
     return V_new, cond
 
@@ -57,12 +56,12 @@ def median(data):
 def main():
   instruction = """
   
-  ==============================================
-  Welcome to Calculate Median Program
-  to stop the program, please enter Ctrl+C
+  ===============================================
+        Welcome to Calculate Median Program
+      to stop the program please enter Ctrl+C
   
-  Naufal Mu'afi - nmuafi1@gmail.com
-  ==============================================
+         Naufal Mu'afi - nmuafi1@gmail.com
+  ===============================================
   
   """
   print(instruction)

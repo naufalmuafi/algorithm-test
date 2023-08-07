@@ -14,7 +14,7 @@ The median is the middle value of a sorted list of numbers. For an odd-sized lis
 2. Open a terminal or command prompt and navigate to the project folder.
 3. Run the file using Python:
    ```
-   filename.py
+   .\filename.py
    ```
 4. Click enter, and the program will display the calculated mean and median.
 

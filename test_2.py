@@ -10,7 +10,7 @@ def generate_value(V_old):
   else:
     V_new = V_old - random.randint(1, 10)
 
-  # create a treshold 0 <= V <= 1000
+  # create a threshold 0 <= V <= 1000
   if V_new < 0:
     V_new = 0 + random.randint(1, 10)
   elif V_new > 1000:
@@ -36,7 +36,7 @@ def print_data(data):
   # if n <= 20, so it will print all the data
   if n <= 20:
     print(f"A = {data} len = {n}")
-  else: # besides that, the array that printed is just the middle index.
+  else: # besides that, the array that is printed is just the middle index.
     if n % 2 == 1:
       print(f"A = [..., {data[mid-1]}, {data[mid]}, {data[mid+1]}, ...] len = {n}")
     else:

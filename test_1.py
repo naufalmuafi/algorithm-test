@@ -10,7 +10,7 @@ def generate_value(V_old):
   else:
     V_new = V_old - random.randint(1, 10)
 
-  # create a treshold 0 <= V <= 500
+  # create a threshold 0 <= V <= 500
   if V_new < 0:
     V_new = 0 + random.randint(1, 10)
   elif V_new > 500:

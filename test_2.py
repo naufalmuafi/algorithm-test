@@ -20,6 +20,26 @@ def generate_value(V_old, cond):
 
   return V_new
 
+def insertion_sort(data, value):
+  for i, v in enumerate(data):
+    if value <= v:
+      sorted_data = data[:i] + [value] + data[i:]
+      return sorted_data
+  
+  sorted_data = data + [value]
+  return sorted_data
+
+def median(data):
+  length = len(data)
+  middle = (length - 1) // 2
+
+  if middle % 2:
+    Median = data[middle]
+  else:
+    middle_even = (data[middle] + data[middle + 1]) / 2.0
+    Median = data[middle_even]
+  
+  return length, Median
 
 def main():
   instruction = """
@@ -39,18 +59,17 @@ def main():
   V, count, condition = 0, 1, 1
 
   while True:
-    V = generate_value(V, condition)
-    print(f"Water Volume = {V} m^3/s")
-
+    V = generate_value(V, condition)    
+    print(f"Water Volume = {V} m^3/s")        
     
-    n = len(A)
-
-    if n % 2 == 1:
-      M = 1
-    else:
-      M = 0
+    A = insertion_sort(A, V)
     
-    print(f"The median of water volume at second {count} is {M:.3f} m^3/s\n")
+    n, M = median(A)
+    
+    if n <= 15:
+      print(f"A = {A}")
+
+    print(f"The median of water volume at second {count} is {M:.2f} m^3/s\n")
 
     count += 1
     time.sleep(1)
